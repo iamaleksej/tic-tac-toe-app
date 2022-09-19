@@ -1,8 +1,9 @@
 export interface TictacState {
    tictacArr: any[][];
-   nextPlayer: any,
+   nextPlayer: Record<string, string>,
    countWin: number
 }
+
 export interface winnerCheckWrapTypes {
    matrix: any[][],
    row: number,

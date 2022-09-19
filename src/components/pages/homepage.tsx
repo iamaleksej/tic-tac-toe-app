@@ -15,6 +15,7 @@ const Homepage: React.FC = () => {
    }, []);
 
 
+
    const winnerCheckWrap = ({ matrix, row, col }: winnerCheckWrapTypes) => {
       //проверка горизонтальная направо
       winnerCheck({ matrix, row, col, symbolForRow: 1, symbolForCol: 0, horizontalMove: 1, verticalMove: - 1, isCountWinHoriz: 0, isCountWinVert: -1, nextHorizIndex: 0, nextVertIndex: 1 })
@@ -47,7 +48,6 @@ const Homepage: React.FC = () => {
             if ((matrix?.[horizontalIndex]?.[verticalIndex] && matrix?.[horizontalIndex + nextHorizIndex]?.[verticalIndex + nextVertIndex]) &&
                (matrix?.[horizontalIndex]?.[verticalIndex] === matrix?.[horizontalIndex + nextHorizIndex]?.[verticalIndex + nextVertIndex])) {
                counter++
-               console.log('counter = ' + counter);
                if (counter === countWin) {
                   return alert('Winner');
                }
@@ -64,6 +64,8 @@ const Homepage: React.FC = () => {
             const matrix = [...currentMatrix];
             matrix[row][col] = currentPlayer;
             setCurrentPlayer(nextPlayer[currentPlayer]);
+            console.log(currentPlayer);
+
             winnerCheckWrap({ matrix, row, col })
             return matrix;
          });

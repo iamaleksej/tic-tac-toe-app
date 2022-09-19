@@ -13,10 +13,10 @@ const Popup = () => {
       setVisible(false)
    }
 
-   console.log(countWin)
+
    return (
       <>
-         {(visible) ? (
+         {visible && (
             <div className="popup">
                <label className="popup__item popup__text">Сколько подряд X/O до победы?</label>
                <input type="number" className="popup__item popup__number"
@@ -24,7 +24,7 @@ const Popup = () => {
                <button className="popup__item popup__btn"
                   onClick={popupBtnClickHandler}>OK</button>
             </div>
-         ) : ''}
+         )}
 
       </>
    )
